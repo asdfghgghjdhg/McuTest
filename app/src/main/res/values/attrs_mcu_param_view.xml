@@ -1,0 +1,6 @@
+<resources>
+    <declare-styleable name="McuParamView">
+        <attr name="paramName" format="string" />
+        <attr name="paramValue" format="string" />
+    </declare-styleable>
+</resources>

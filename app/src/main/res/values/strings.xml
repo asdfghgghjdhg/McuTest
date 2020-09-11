@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">McuTest</string>
+    <string name="btnVolDownCaption">Vol -</string>
+    <string name="btnVolUpCaption">Vol +</string>
+    <string name="btnMuteCaption">Mute</string>
+    <string name="btnStatusCaption">Status</string>
+    <string name="btnSettingsCaption">Settings</string>
+    <string name="btnTunerCaption">Tuner</string>
+    <string name="btnAudioCaption">Audio</string>
+    <string name="btnTunerPresetsCaption">Presets</string>
+    <string name="btnExitCaption">Exit</string>
+    <string name="btnTestCaption">Test</string>
+
+    <string name="btnSDAlwaysCaption">Now</string>
+    <string name="btnSD2HoursCaption">2H</string>
+    <string name="btnSD12HoursCaption">12H</string>
+    <string name="btnSD24HoursCaption">24H</string>
+
+    <string name="btnBandCaption">Band</string>
+    <string name="btnASCaption">AS</string>
+    <string name="btnPSCaption">PS</string>
+    <string name="btnTunerScanCaption">Scan</string>
+    <string name="btnSeekDownCaption">Seek -</string>
+    <string name="btnSeekUpCaption">Seek +</string>
+    <string name="btnTunerOnCaption">On</string>
+    <string name="btnTunerOffCaption">Off</string>
+    <string name="btnTunerLocalCaption">Local</string>
+
+    <string name="connectionStatus">Connected</string>
+    <string name="powerStatus">Power on</string>
+    <string name="versionStatus">Version</string>
+    <string name="frontSource">Front</string>
+    <string name="rearSource">Rear</string>
+    <string name="volumeStatus">Volume</string>
+    <string name="muteStatus">Muted</string>
+    <string name="statusFlags">Status</string>
+
+    <string name="tunerFreq">Freq</string>
+    <string name="tunerBand">Band</string>
+    <string name="tunerPreset">Preset</string>
+    <string name="tunerFlags">Status</string>
+    <string name="tunerRange">Range</string>
+    <string name="tunerRegion">Region</string>
+
+    <string name="audioPreset">Preset</string>
+    <string name="audioBalance">Balance</string>
+    <string name="audioFade">Fade</string>
+    <string name="audioBassGain">Bass</string>
+    <string name="audioMiddleGain">Middle</string>
+    <string name="audioTrebleGain">Treble</string>
+</resources>

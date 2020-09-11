@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonBar"
+        app:layout_constraintEnd_toStartOf="@id/barStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/console"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/background_dark"
+            android:padding="5dp"
+            android:scrollHorizontally="true"
+            android:textColor="@android:color/primary_text_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/barStatus"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/buttonBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamView
+            android:id="@+id/paramConnected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/connectionStatus" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamView
+            android:id="@+id/paramPoweredOn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/powerStatus" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamView
+            android:id="@+id/paramVersion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:paramName="@string/versionStatus" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamView
+            android:id="@+id/paramFrontSource"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/frontSource" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamView
+            android:id="@+id/paramRearSource"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:paramName="@string/rearSource" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamView
+            android:id="@+id/paramMuted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/muteStatus" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamView
+            android:id="@+id/paramVolume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:paramName="@string/volumeStatus" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamView
+            android:id="@+id/paramStatusFlags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/statusFlags" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/barSettings"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/buttonBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <Button
+                    android:id="@+id/btnSDAlways"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnSDAlwaysOnClick"
+                    android:text="@string/btnSDAlwaysCaption" />
+
+                <Button
+                    android:id="@+id/btnSD2Hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnSD2HoursOnClick"
+                    android:text="@string/btnSD2HoursCaption" />
+
+                <Button
+                    android:id="@+id/btnSD12Hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnSD12HoursOnClick"
+                    android:text="@string/btnSD12HoursCaption" />
+
+                <Button
+                    android:id="@+id/btnSD24Hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnSD24HoursOnClick"
+                    android:text="@string/btnSD24HoursCaption" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/barTuner"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/buttonBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamSettings
+            android:id="@+id/paramTunerFreq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/tunerFreq" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamSettings
+            android:id="@+id/paramTunerRegion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/tunerRegion" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamView
+            android:id="@+id/paramTunerRange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/tunerRange" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamView
+            android:id="@+id/paramTunerBand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/tunerBand" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamView
+            android:id="@+id/paramTunerFlags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:paramName="@string/tunerFlags" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <Button
+                    android:id="@+id/btnBand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnBandOnClick"
+                    android:text="@string/btnBandCaption" />
+
+                <Button
+                    android:id="@+id/btnTunerAS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnASOnClick"
+                    android:text="@string/btnASCaption" />
+
+                <Button
+                    android:id="@+id/btnTunerPS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnPSOnClick"
+                    android:text="@string/btnPSCaption" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <Button
+                    android:id="@+id/btnTunerSeekDown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnSeekDownOnClick"
+                    android:text="@string/btnSeekDownCaption" />
+
+                <Button
+                    android:id="@+id/btnTunerScan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnScanOnClick"
+                    android:text="@string/btnTunerScanCaption" />
+
+                <Button
+                    android:id="@+id/btnTunerSeekUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnSeekUpOnClick"
+                    android:text="@string/btnSeekUpCaption" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <Button
+                    android:id="@+id/btnTunerOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnTunerOnOnClick"
+                    android:text="@string/btnTunerOnCaption" />
+
+                <Button
+                    android:id="@+id/btnTunerLocal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnTunerLocalOnClick"
+                    android:text="@string/btnTunerLocalCaption" />
+
+                <Button
+                    android:id="@+id/btnTunerOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="btnTunerOffOnClick"
+                    android:text="@string/btnTunerOffCaption" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/barTunerPresets"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/buttonBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btnTunerPreset0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+
+            <Button
+                android:id="@+id/btnTunerPreset1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+
+            <Button
+                android:id="@+id/btnTunerPreset2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btnTunerPreset3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+
+            <Button
+                android:id="@+id/btnTunerPreset4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+
+            <Button
+                android:id="@+id/btnTunerPreset5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btnTunerPreset6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+
+            <Button
+                android:id="@+id/btnTunerPreset7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+
+            <Button
+                android:id="@+id/btnTunerPreset8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btnTunerPreset9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+
+            <Button
+                android:id="@+id/btnTunerPreset10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+
+            <Button
+                android:id="@+id/btnTunerPreset11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btnTunerPreset12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+
+            <Button
+                android:id="@+id/btnTunerPreset13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+
+            <Button
+                android:id="@+id/btnTunerPreset14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btnTunerPreset15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+
+            <Button
+                android:id="@+id/btnTunerPreset16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+
+            <Button
+                android:id="@+id/btnTunerPreset17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="btnTunerPresetOnClick" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/barAudio"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/buttonBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamSettings
+            android:id="@+id/paramAudioPreset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:paramName="@string/audioPreset" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamSettings
+            android:id="@+id/paramAudioBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/audioBalance" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamSettings
+            android:id="@+id/paramAudioFade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:paramName="@string/audioFade" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamSettings
+            android:id="@+id/paramAudioBassGain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/audioBassGain" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamSettings
+            android:id="@+id/paramAudioMiddleGain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/audioMiddleGain" />
+
+        <com.google.asdfghgghjdhg.mcutest.McuParamSettings
+            android:id="@+id/paramAudioTrebleGain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paramName="@string/audioTrebleGain" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonBar"
+        style="?attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/button_divider"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:scrollbars="none"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnVolDown"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="btnVolDownOnClick"
+            android:text="@string/btnVolDownCaption" />
+
+        <Button
+            android:id="@+id/btnVolUp"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:onClick="btnVolUpOnClick"
+            android:text="@string/btnVolUpCaption" />
+
+        <Button
+            android:id="@+id/btnMute"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:onClick="btnMuteOnClick"
+            android:text="@string/btnMuteCaption" />
+
+        <Button
+            android:id="@+id/btnGeneral"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:onClick="btnStatusOnClick"
+            android:text="@string/btnStatusCaption" />
+
+        <Button
+            android:id="@+id/btnSettings"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:onClick="btnSettingsOnClick"
+            android:text="@string/btnSettingsCaption" />
+
+        <Button
+            android:id="@+id/btnTuner"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:onClick="btnTunerOnClick"
+            android:text="@string/btnTunerCaption" />
+
+        <Button
+            android:id="@+id/btnTunerPresets"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:onClick="btnTunerPresetsOnClick"
+            android:text="@string/btnTunerPresetsCaption" />
+
+        <Button
+            android:id="@+id/btnAudio"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:onClick="btnAudioOnClick"
+            android:text="@string/btnAudioCaption" />
+
+        <Button
+            android:id="@+id/btnTest1"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:onClick="btnTest1OnClick"
+            android:text="@string/btnTestCaption" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnExit"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:onClick="btnExitOnClick"
+            android:text="@string/btnExitCaption" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

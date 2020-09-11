@@ -1,0 +1,8 @@
+rootProject.name='McuTest'
+include ':app', ':ServiceManager'
+include ':serialport'
+project(':serialport').projectDir=new File('C:\\Users\\one.VICTORY\\StudioProjects\\AutoLibs\\serialport')
+include ':framework'
+project(':framework').projectDir=new File('C:\\Users\\one.VICTORY\\StudioProjects\\AutoLibs\\framework')
+include ':service'
+project(':service').projectDir=new File('C:\\Users\\one.VICTORY\\StudioProjects\\AutoLibs\\service')

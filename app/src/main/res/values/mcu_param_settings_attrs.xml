@@ -1,0 +1,6 @@
+<resources>
+    <declare-styleable name="McuParamSettings">
+        <attr name="onDecClick" format="string"/>
+        <attr name="onIncClick" format="string"/>
+    </declare-styleable>
+</resources>
